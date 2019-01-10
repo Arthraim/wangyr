@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <span>WangYR is</span>
-    <span id="age"></span>
+    <div>
+        <span>WangYR is</span>
+        <span id="age"></span>
+    </div>
   </body>
 </html>
 <style>
@@ -18,11 +20,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
-        text-align: center;
-        font-size: 100px;
+        width: 90%;
+        height: 90%;
+        font-size: 8vw;
         font-family: Avenir, Helvetica, sans;
-        font-weight: medium;
         line-height: 1.5;
     }
 </style>

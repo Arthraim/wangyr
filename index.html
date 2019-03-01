@@ -7,7 +7,7 @@
   </head>
   <body>
     <div>
-        <span>WangYR is</span>
+        <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a> is</span>
         <span id="age"></span>
     </div>
   </body>
@@ -20,17 +20,34 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #333333;
     }
     div {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        width: 90%;
         height: 90%;
-        font-size: 8vw;
+        font-size: 5vw;
         font-family: Avenir, Helvetica, sans;
         line-height: 1.5;
+    }
+    .yr, .yr:active {
+        position: relative;
+        font-weight: 500;
+        text-decoration: none;
+        color: #333333;
+    }
+    .yr:after {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: .35em;
+        background: #FF44B1;
+        bottom: 10px;
+        z-index: -999;
     }
 </style>
 <script>

@@ -7,8 +7,8 @@
   </head>
   <body>
     <div>
-        <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a> is</span>
-        <span id="age"></span>
+        <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a><span class="monospace">&gt;uptime</span></span>
+        <span>up <span id="age"></span></span>
     </div>
   </body>
 </html>
@@ -48,6 +48,9 @@
         background: #FFE411;
         bottom: .2em;
         z-index: -999;
+    }
+    .monospace {
+        font-family: "Menlo", "Monaco", monospace;
     }
 </style>
 <script>
@@ -112,20 +115,20 @@
 
 
         if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )
-            ageString = age.years + yearString + ", " + age.months + monthString + ", and " + age.days + dayString + " old.";
+            ageString = age.years + yearString + ", " + age.months + monthString + ", and " + age.days + dayString;
         else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )
-            ageString = "Only " + age.days + dayString + " old!";
+            ageString = "only " + age.days + dayString;
         else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )
             ageString = age.years + yearString + " old. Happy Birthday!!";
         else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )
-            ageString = age.years + yearString + " and " + age.months + monthString + " old.";
+            ageString = age.years + yearString + " and " + age.months + monthString;
         else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )
-            ageString = age.months + monthString + " and " + age.days + dayString + " old.";
+            ageString = age.months + monthString + " and " + age.days + dayString;
         else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )
-            ageString = age.years + yearString + " and " + age.days + dayString + " old.";
+            ageString = age.years + yearString + " and " + age.days + dayString;
         else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )
-            ageString = age.months + monthString + " old.";
-        else ageString = "Oops! Could not calculate age!";
+            ageString = age.months + monthString;
+        else ageString = "NAN!";
 
         return ageString;
     }

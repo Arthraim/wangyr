@@ -12,11 +12,18 @@
       </div>
       <div class="friends">
         <span class="subtitle">..and her friends</span>
-        <ul>
-          <li><span class="name">ChengZR</span><span class="age" id="czr"></span></li>
-          <li><span class="name">WangCQ</span><span class="age" id="wcq"></span></li>
-          <li><span class="name">TaoMC</span><span class="age" id="tmc"></span></li>
-        </ul>
+        <div class="namelist">
+          <ul style="text-align: right;">
+            <li><span class="name">ChengZR</span></li>
+            <li><span class="name">WangCQ</span></li>
+            <li><span class="name">TaoMC</span></li>
+          </ul>
+          <ul>
+            <li><span class="age" id="czr"></span></li>
+            <li><span class="age" id="wcq"></span></li>
+            <li><span class="age" id="tmc"></span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
@@ -81,6 +88,9 @@
       flex-direction: column;
       justify-content: center;
       font-size: 3vw;
+    }
+    .friends div.namelist {
+      display: flex;
     }
     .friends ul {
       list-style-type: none;

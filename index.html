@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div>
-        <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a><span class="monospace">&gt; uptime</span></span>
-        <span>up <span id="age"></span></span>
+    <div class="container">
+      <div class="content">
+        <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a><span class="age" id="wyr"></span></span>
+      </div>
+      <div class="friends">
+        <span class="subtitle">..and her friends</span>
+        <ul>
+          <li><span class="name">ChengZR</span><span class="age" id="czr"></span></li>
+          <li><span class="name">WangCQ</span><span class="age" id="wcq"></span></li>
+          <li><span class="name">TaoMC</span><span class="age" id="tmc"></span></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
@@ -23,9 +32,9 @@
         justify-content: center;
         color: #333333;
     }
-    div {
+    .container {
         display: flex;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: center;
         flex-direction: column;
         height: 90%;
@@ -53,9 +62,39 @@
     .monospace {
         font-family: "Menlo", "Monaco", monospace;
     }
+    .age {
+        margin-left: 1em;
+        font-size: 0.9em;
+    }
+    .name {
+      font-weight: 500;
+    }
+    .content {
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .friends {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 3vw;
+    }
+    .friends ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .friends span.subtitle {
+      color: #555;
+    }
 </style>
 <script>
-    document.getElementById("age").innerHTML = getAge("12/14/2018");
+    document.getElementById("wyr").innerHTML = getAge("12/14/2018");
+    document.getElementById("czr").innerHTML = getAge("04/02/2015");
+    document.getElementById("wcq").innerHTML = getAge("04/23/2019");
+    document.getElementById("tmc").innerHTML = getAge("06/27/2019");
     // VIA https://stackoverflow.com/a/12251462
     function getAge(dateString) {
         var now = new Date();

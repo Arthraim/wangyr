@@ -1,185 +1,200 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WangYR</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="container">
-      <div class="content">
-        <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a><span class="age" id="wyr"></span></span>
-      </div>
-      <div class="friends">
-        <span class="subtitle">..and her friends</span>
-        <div class="namelist">
-          <ul style="text-align: right;">
-            <li><span class="name">ChengZR</span></li>
-            <li><span class="name">WangCQ</span></li>
-            <li><span class="name">TaoMC</span></li>
-          </ul>
-          <ul>
-            <li><span class="age" id="czr"></span></li>
-            <li><span class="age" id="wcq"></span></li>
-            <li><span class="age" id="tmc"></span></li>
-          </ul>
-        </div>
+
+<head>
+  <title>WangYR</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <span><a class="yr" href="https://www.instagram.com/xmh_yr/">WangYR</a><span class="age" id="wyr"></span></span>
+    </div>
+    <div class="friends">
+      <span class="subtitle">..and her friends</span>
+      <div class="namelist">
+        <ul style="text-align: right;">
+          <li><span class="name">ChengZR</span></li>
+          <li><span class="name">WangCQ</span></li>
+          <li><span class="name">TaoMC</span></li>
+        </ul>
+        <ul>
+          <li><span class="age" id="czr"></span></li>
+          <li><span class="age" id="wcq"></span></li>
+          <li><span class="age" id="tmc"></span></li>
+        </ul>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
 <style>
-    body {
-        margin: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #333333;
-    }
-    .container {
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-        flex-direction: column;
-        height: 90%;
-        font-size: 5vw;
-        font-family: Avenir, Helvetica, sans;
-        line-height: 1.5;
-    }
-    .yr, .yr:active {
-        position: relative;
-        font-weight: 500;
-        text-decoration: none;
-        color: #333333;
-    }
-    .yr:after {
-        display: block;
-        content: "";
-        position: absolute;
-        width: 100%;
-        left: 0;
-        height: .35em;
-        background: #FFE411;
-        bottom: .2em;
-        z-index: -999;
-    }
-    .monospace {
-        font-family: "Menlo", "Monaco", monospace;
-    }
-    .age {
-        margin-left: 1em;
-        font-size: 0.9em;
-    }
-    .name {
-      font-weight: 500;
-    }
-    .content {
-      flex: 1;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-    }
-    .friends {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-      font-size: 3vw;
-    }
-    .friends div.namelist {
-      display: flex;
-    }
-    .friends ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .friends span.subtitle {
-      color: #555;
-    }
+  body {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+  }
+
+  .container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    height: 90%;
+    font-size: 5vw;
+    font-family: Avenir, Helvetica, sans;
+    line-height: 1.5;
+  }
+
+  .yr,
+  .yr:active {
+    position: relative;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333333;
+  }
+
+  .yr:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: .35em;
+    background: #FFE411;
+    bottom: .2em;
+    z-index: -999;
+  }
+
+  .monospace {
+    font-family: "Menlo", "Monaco", monospace;
+  }
+
+  .age {
+    margin-left: 1em;
+    font-size: 0.9em;
+  }
+
+  .name {
+    font-weight: 500;
+  }
+
+  .content {
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .friends {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3vw;
+  }
+
+  .friends div.namelist {
+    display: flex;
+  }
+
+  .friends ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .friends span.subtitle {
+    color: #555;
+  }
 </style>
 <script>
-    document.getElementById("wyr").innerHTML = getAge("12/14/2018");
-    document.getElementById("czr").innerHTML = getAge("04/02/2015");
-    document.getElementById("wcq").innerHTML = getAge("04/23/2019");
-    document.getElementById("tmc").innerHTML = getAge("06/27/2019");
-    // VIA https://stackoverflow.com/a/12251462
-    function getAge(dateString) {
-        var now = new Date();
-        var today = new Date(now.getYear(),now.getMonth(),now.getDate());
+  document.getElementById("wyr").innerHTML = getAge("12/14/2018");
+  document.getElementById("czr").innerHTML = getAge("04/02/2015");
+  document.getElementById("wcq").innerHTML = getAge("04/23/2019");
+  document.getElementById("tmc").innerHTML = getAge("06/27/2019");
+  // VIA https://stackoverflow.com/a/12251462
+  function getAge(dateString) {
+    var now = new Date();
+    var today = new Date(now.getYear(), now.getMonth(), now.getDate());
 
-        var yearNow = now.getYear();
-        var monthNow = now.getMonth();
-        var dateNow = now.getDate();
+    var yearNow = now.getYear();
+    var monthNow = now.getMonth();
+    var dateNow = now.getDate();
 
-        var dob = new Date(dateString.substring(6,10),
-                            dateString.substring(0,2)-1,
-                            dateString.substring(3,5)
-                            );
+    var dob = new Date(dateString.substring(6, 10),
+      dateString.substring(0, 2) - 1,
+      dateString.substring(3, 5)
+    );
 
-        var yearDob = dob.getYear();
-        var monthDob = dob.getMonth();
-        var dateDob = dob.getDate();
-        var age = {};
-        var ageString = "";
-        var yearString = "";
-        var monthString = "";
-        var dayString = "";
-
-
-        yearAge = yearNow - yearDob;
-
-        if (monthNow >= monthDob)
-            var monthAge = monthNow - monthDob;
-        else {
-            yearAge--;
-            var monthAge = 12 + monthNow -monthDob;
-        }
-
-        if (dateNow >= dateDob)
-            var dateAge = dateNow - dateDob;
-        else {
-            monthAge--;
-            var dateAge = 31 + dateNow - dateDob;
-
-            if (monthAge < 0) {
-            monthAge = 11;
-            yearAge--;
-            }
-        }
-
-        age = {
-            years: yearAge,
-            months: monthAge,
-            days: dateAge
-            };
-
-        if ( age.years > 1 ) yearString = " years";
-        else yearString = " year";
-        if ( age.months> 1 ) monthString = " months";
-        else monthString = " month";
-        if ( age.days > 1 ) dayString = " days";
-        else dayString = " day";
+    var yearDob = dob.getYear();
+    var monthDob = dob.getMonth();
+    var dateDob = dob.getDate();
+    var age = {};
+    var ageString = "";
+    var yearString = "";
+    var monthString = "";
+    var dayString = "";
 
 
-        if ( (age.years > 0) && (age.months > 0) && (age.days > 0) )
-            ageString = age.years + yearString + ", " + age.months + monthString + ", and " + age.days + dayString;
-        else if ( (age.years == 0) && (age.months == 0) && (age.days > 0) )
-            ageString = "only " + age.days + dayString;
-        else if ( (age.years > 0) && (age.months == 0) && (age.days == 0) )
-            ageString = age.years + yearString + " old. Happy Birthday!!";
-        else if ( (age.years > 0) && (age.months > 0) && (age.days == 0) )
-            ageString = age.years + yearString + " and " + age.months + monthString;
-        else if ( (age.years == 0) && (age.months > 0) && (age.days > 0) )
-            ageString = age.months + monthString + " and " + age.days + dayString;
-        else if ( (age.years > 0) && (age.months == 0) && (age.days > 0) )
-            ageString = age.years + yearString + " and " + age.days + dayString;
-        else if ( (age.years == 0) && (age.months > 0) && (age.days == 0) )
-            ageString = age.months + monthString;
-        else ageString = "NAN!";
+    yearAge = yearNow - yearDob;
 
-        return ageString;
+    if (monthNow >= monthDob)
+      var monthAge = monthNow - monthDob;
+    else {
+      yearAge--;
+      var monthAge = 12 + monthNow - monthDob;
     }
+
+    if (dateNow >= dateDob)
+      var dateAge = dateNow - dateDob;
+    else {
+      monthAge--;
+      var dateAge = 31 + dateNow - dateDob;
+
+      if (monthAge < 0) {
+        monthAge = 11;
+        yearAge--;
+      }
+    }
+
+    age = {
+      years: yearAge,
+      months: monthAge,
+      days: dateAge
+    };
+
+    if (age.years > 1) yearString = " years";
+    else yearString = " year";
+    if (age.months > 1) monthString = " months";
+    else monthString = " month";
+    if (age.days > 1) dayString = " days";
+    else dayString = " day";
+
+
+    if ((age.years > 0) && (age.months > 0) && (age.days > 0))
+      ageString = age.years + yearString + ", " + age.months + monthString + ", and " + age.days + dayString;
+    else if ((age.years == 0) && (age.months == 0) && (age.days > 0))
+      ageString = "only " + age.days + dayString;
+    else if ((age.years > 0) && (age.months == 0) && (age.days == 0))
+      ageString = age.years + yearString + " old. Happy Birthday!!";
+    else if ((age.years > 0) && (age.months > 0) && (age.days == 0))
+      ageString = age.years + yearString + " and " + age.months + monthString;
+    else if ((age.years == 0) && (age.months > 0) && (age.days > 0))
+      ageString = age.months + monthString + " and " + age.days + dayString;
+    else if ((age.years > 0) && (age.months == 0) && (age.days > 0))
+      ageString = age.years + yearString + " and " + age.days + dayString;
+    else if ((age.years == 0) && (age.months > 0) && (age.days == 0))
+      ageString = age.months + monthString;
+    else ageString = "NAN!";
+
+    return ageString;
+  }
 </script>
